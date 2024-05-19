@@ -20,6 +20,8 @@ public class PlayerCharacter : Character
     GameObject healthUI;
     [SerializeField]
     SpriteRenderer playerSprite;
+    [SerializeField]
+    TrailRenderer trail;
 
     float horizontalMovement;
     float verticalMovement;
@@ -36,6 +38,7 @@ public class PlayerCharacter : Character
         base.Start();
         isPlayer = true;
         UpdateHealthUI(currentHP);
+        trail.emitting = false;
     }
 
     private void UpdateHealthUI(int health)
@@ -111,9 +114,11 @@ public class PlayerCharacter : Character
         //TODO Dash audio
         isDashing = true;
         canDash = false;
+        trail.emitting = true;
         rigidbody.velocity = new Vector2(movement.x * dashSpeed, movement.y * dashSpeed);
         yield return new WaitForSeconds(dashTime);
         isDashing=false;
+        trail.emitting = false;
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
         

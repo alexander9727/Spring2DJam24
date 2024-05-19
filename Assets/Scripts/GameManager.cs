@@ -35,9 +35,10 @@ public class GameManager : MonoBehaviour
         loseScreen.SetActive(true);
         Time.timeScale = 0f;
     }
-    public void ShowWinScreen(int level)
+    public void ShowWinScreen()
     {
-        nextLevel = level;
+        nextLevel = SceneManager.GetActiveScene().buildIndex;
+        nextLevel++;
         Time.timeScale = 0f;
         if (nextLevel < Constants.endLevel)
         {

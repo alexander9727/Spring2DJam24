@@ -15,7 +15,7 @@ public static class Constants
     public const int meleeAttackLimit = 3;
     public const string attackTrigger="Attack";
 
-    public const int startLevel = 1;
-    public const int endLevel = 2;
-    public const int thanksLevel = 4;
+    public const int startLevel = 2;
+    public const int endLevel = 4;
+    public const int thanksLevel = 1;
 }
