@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 967ae7c8b3102574bacec72da1937235, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c60eba67acd18ff4d86f2c0b497da461, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1586048360340736043}
   - component: {fileID: 2919691669385078119}
   - component: {fileID: 2942528153731091622}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 967ae7c8b3102574bacec72da1937235, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c60eba67acd18ff4d86f2c0b497da461, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -245,7 +245,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

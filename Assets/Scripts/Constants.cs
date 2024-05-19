@@ -9,13 +9,13 @@ public static class Constants
     public const string playerLayer="Player";
     public const string enemyLayer="Enemy";
     public const string playerTag = "Player";
-    public const string patrolTag = "Patrol";// Hacky workaround instead of refactoing collision for other enemies
+    public const string patrolTag = "Patrol";// Hacky workaround instead of refactoring collision for other enemies
 
     //Attack
     public const int meleeAttackLimit = 3;
     public const string attackTrigger="Attack";
 
-    public const int startLevel = 2;
-    public const int endLevel = 3;
+    public const int startLevel = 1;
+    public const int endLevel = 2;
     public const int thanksLevel = 4;
 }
