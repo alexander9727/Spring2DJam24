@@ -99,11 +99,11 @@ public class PlayerCharacter : Character
         {
             rigidbody.velocity = new Vector2(movement.x*moveSpeed, movement.y*moveSpeed);  
         }
-        if (movement != Vector2.zero)
+        /*if (movement != Vector2.zero)
         {
             float rotation = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rotation + offset);
-        }
+        }*/
     }
     
     private IEnumerator Dash()
@@ -149,7 +149,6 @@ public class PlayerCharacter : Character
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Knockback
-        Debug.Log("COllosiop");
         if (collision.collider.CompareTag(Constants.patrolTag))
         {
             ApplyDamage(1);
