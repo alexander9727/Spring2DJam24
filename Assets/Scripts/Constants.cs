@@ -16,6 +16,6 @@ public static class Constants
     public const string attackTrigger="Attack";
 
     public const int startLevel = 2;
-    public const int endLevel = 4;
+    public const int endLevel = 5;
     public const int thanksLevel = 1;
 }
