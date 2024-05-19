@@ -13,7 +13,7 @@ public class LevelEnd : MonoBehaviour
     {
         if(collision.CompareTag(Constants.playerTag))
         {
-            gameManager.LoadLevel(sceneToLoad);
+            gameManager.ShowWinScreen(sceneToLoad);
         }
     }
 }
