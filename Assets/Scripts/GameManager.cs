@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(player != null)
+        if (player != null)
         {
             player.SetGameManager(this);
         }
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void ShowLoseScreen()
     {
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         nextLevel = level;
         Time.timeScale = 0f;
-        if(nextLevel<Constants.endLevel)
+        if (nextLevel < Constants.endLevel)
         {
             winScreen.SetActive(true);
         }
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
             LoadLevel(Constants.thanksLevel);
         }
-        
+
     }
     public void RestartLevel()
     {

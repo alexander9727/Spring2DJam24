@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1f6e0072694f3104e9deed5cb15b0587
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/VimalTest.unity
-    guid: 0a3cb9b8c889ee544bd5df7a26d6dc84
+    path: Assets/Scenes/Level1.unity
+    guid: f6c84aa6844b6f74b92208ce76ff0239
   m_configObjects: {}
