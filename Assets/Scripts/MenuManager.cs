@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using static Cinemachine.DocumentationSortingAttribute;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour

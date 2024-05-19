@@ -11,8 +11,7 @@ public class LineGenerator : MonoBehaviour
     LineRenderer lineRenderer;
     PolygonCollider2D polyCollider;
     [SerializeField] float tSegmentVisualLength;
-    [SerializeField] float colliderAccuracy = 1;
-    [SerializeField] bool useQuadratic;
+
     public LineRenderer LineRenderer
     {
         get
@@ -40,8 +39,9 @@ public class LineGenerator : MonoBehaviour
 
     private void Update()
     {
+        if (Application.isPlaying) return;
         if (LineRenderer == null) return;
-
+        if (transform.childCount <= 2) return;
 
         List<Vector3> points = new List<Vector3>();
         for (int i = 0; i < transform.childCount; i++)
