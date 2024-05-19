@@ -147,7 +147,7 @@ public class PlayerCharacter : Character
         base.Die();
         if(gameManager != null)
         {
-            gameManager.RestartLevel();
+            gameManager.ShowLoseScreen();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
