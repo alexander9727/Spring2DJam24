@@ -30,7 +30,7 @@ public class PlayerCharacter : Character
     bool canMove=true;
     bool canDash = true;
     bool isDashing = false;
-
+    bool isPulsing=false;
     void Start()
     {
         base.Start();
@@ -83,7 +83,7 @@ public class PlayerCharacter : Character
         verticalMovement = Input.GetAxisRaw("Vertical");
         movement = new Vector2(horizontalMovement, verticalMovement).normalized;
         //Dash
-        if(Input.GetMouseButtonDown(1)&&canDash)
+        if(Input.GetKeyDown(KeyCode.LeftShift)&&canDash)
         {
             StartCoroutine(Dash());
         }/*
@@ -128,10 +128,15 @@ public class PlayerCharacter : Character
         //TODO Player takes damage audio
         base.ApplyDamage(damage);
         UpdateHealthUI(currentHP);
-        StartCoroutine(ShowHitImpact());
+        if(!isPulsing)
+        {
+            StartCoroutine(ShowHitImpact());
+        }
+        
     }
     IEnumerator ShowHitImpact()
     {
+        isPulsing = true;
         Color spriteColor = playerSprite.color;
         for (int i = 0; i < 2; i++)
         {
@@ -140,6 +145,7 @@ public class PlayerCharacter : Character
             playerSprite.color = spriteColor;
             yield return new WaitForSeconds(0.1f);
         }
+        isPulsing = false;
     }
     public override void Die()
     {
