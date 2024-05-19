@@ -41,7 +41,7 @@ public class LineGenerator : MonoBehaviour
     {
         if (Application.isPlaying) return;
         if (LineRenderer == null) return;
-        if (transform.childCount <= 2) return;
+        if (transform.childCount < 2) return;
 
         List<Vector3> points = new List<Vector3>();
         for (int i = 0; i < transform.childCount; i++)

@@ -22,8 +22,9 @@ public class WavingEnemy : Character
 
     bool isReverse;
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
         startRotation = transform.rotation.eulerAngles;
         initialRotation = startRotation;
         finalRotation = endRotation;

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 3947195947683814544}
   moveSpeed: 30
-  lifeTime: 1
+  lifeTime: 100
 --- !u!50 &3947195947683814544
 Rigidbody2D:
   serializedVersion: 4
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
