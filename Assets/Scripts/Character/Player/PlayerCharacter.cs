@@ -29,7 +29,7 @@ public class PlayerCharacter : Character
 
     GameManager gameManager;
 
-    bool canMove=true;
+    public bool canMove=true;
     bool canDash = true;
     bool isDashing = false;
     bool isPulsing=false;
@@ -65,7 +65,10 @@ public class PlayerCharacter : Character
     // Update is called once per frame
     void Update()
     {
-        HandleInput();
+        if (canMove)
+        {
+            HandleInput();
+        }
     }
 
 

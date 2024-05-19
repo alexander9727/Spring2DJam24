@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         nextLevel = SceneManager.GetActiveScene().buildIndex;
         nextLevel++;
         Time.timeScale = 0f;
-        if (nextLevel < Constants.endLevel)
+        if (nextLevel <=Constants.endLevel)
         {
             winScreen.SetActive(true);
         }
