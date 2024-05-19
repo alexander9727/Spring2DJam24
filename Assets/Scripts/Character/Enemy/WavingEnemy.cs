@@ -42,12 +42,11 @@ public class WavingEnemy : Character
         {
             if (!isReverse)
             {
-                transform.rotation = Quaternion.Euler(Vector3.Lerp(initialRotation, endRotation, lerpAlpha));
+                transform.rotation = Quaternion.Euler(Vector3.Lerp(initialRotation,finalRotation,lerpAlpha));
             }
             else
             {
-                transform.rotation = Quaternion.Euler(Vector3.Lerp(endRotation
-                    , initialRotation, lerpAlpha));
+                transform.rotation = Quaternion.Euler(Vector3.Lerp(finalRotation,initialRotation,lerpAlpha));
             }
         }
         else
@@ -56,6 +55,13 @@ public class WavingEnemy : Character
             isReverse = !isReverse;
         }
         timeCount = timeCount + Time.deltaTime;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag(Constants.playerTag))
+        {
+            collision.gameObject.GetComponent<Character>().ApplyDamage(1);
+        }
     }
 
 }
