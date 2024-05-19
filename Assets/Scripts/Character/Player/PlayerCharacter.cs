@@ -148,6 +148,12 @@ public class PlayerCharacter : Character
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //KnockBack
+        //Knockback
+        Debug.Log("COllosiop");
+        if (collision.collider.CompareTag(Constants.patrolTag))
+        {
+            ApplyDamage(1);
+        }
     }
+
 }
