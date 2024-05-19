@@ -31,6 +31,7 @@ public class SpreadShot : Weapon
     }
     IEnumerator ShootProjectiles(Transform shootpoint, float range)
     {
+        //TODO Spreadshote audio
         canFire = false;
         if (numberOfBullets > 0)
         {

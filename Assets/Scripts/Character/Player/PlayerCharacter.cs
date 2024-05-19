@@ -108,6 +108,7 @@ public class PlayerCharacter : Character
     
     private IEnumerator Dash()
     {
+        //TODO Dash audio
         isDashing = true;
         canDash = false;
         rigidbody.velocity = new Vector2(movement.x * dashSpeed, movement.y * dashSpeed);
@@ -115,6 +116,7 @@ public class PlayerCharacter : Character
         isDashing=false;
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
+        
     }
     private void OnDrawGizmos()
     {
@@ -123,6 +125,7 @@ public class PlayerCharacter : Character
 
     public override void ApplyDamage(int damage)
     {
+        //TODO Player takes damage audio
         base.ApplyDamage(damage);
         UpdateHealthUI(currentHP);
         StartCoroutine(ShowHitImpact());
@@ -140,6 +143,7 @@ public class PlayerCharacter : Character
     }
     public override void Die()
     {
+        //TODO Player Death audio
         base.Die();
         if(gameManager != null)
         {

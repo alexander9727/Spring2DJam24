@@ -40,6 +40,7 @@ public class Boomerang : Weapon
 
     public override void Fire(Transform shootpoint, float range, bool isPlayer)
     {
+        //TODO Boomerang audio
         base.Fire(shootpoint, range, isPlayer);
         isMoving = true;
         canFire = false;
