@@ -23,7 +23,7 @@ public class TurretEnemy : Character
 
     private void CheckPlayer()
     {
-        Collider2D player = Physics2D.OverlapCircle(transform.position, attackRange);
+        Collider2D player = Physics2D.OverlapCircle(transform.position, attackRange,LayerMask.GetMask(Constants.playerLayer));
         if (player != null)
         {
             Debug.Log("Player found");
@@ -31,13 +31,20 @@ public class TurretEnemy : Character
             {
                 weapon.Fire(shootpoint, attackRange,isPlayer);
             }
-            Vector3 relativePos = player.transform.position - transform.position;
-            transform.up = relativePos.normalized;
+           /* Vector3 relativePos = player.transform.position - transform.position;
+            transform.up = relativePos.normalized;*/
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(shootpoint.position, attackRange);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag(Constants.playerTag))
+        {
+            collision.gameObject.GetComponent<Character>().ApplyDamage(1);
+        }
     }
 }

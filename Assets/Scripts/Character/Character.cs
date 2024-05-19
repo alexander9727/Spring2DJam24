@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
     {
         currentHP = MaxHP;
     }
-    public virtual void Applyamage(int damage)
+    public virtual void ApplyDamage(int damage)
     {
         currentHP -= damage;
         if(currentHP <= 0)

@@ -5,10 +5,10 @@ using UnityEngine;
 public static class Constants 
 {
 
-    //Layers
+    //Layers and Tags
     public const string playerLayer="Player";
     public const string enemyLayer="Enemy";
-
+    public const string playerTag = "Player";
 
     //Attack
     public const int meleeAttackLimit = 3;

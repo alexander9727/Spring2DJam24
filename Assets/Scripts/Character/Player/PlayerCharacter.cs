@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : Character
 {
@@ -15,10 +16,16 @@ public class PlayerCharacter : Character
     float dashCoolDown;
     [SerializeField]
     float dashTime;
+    [SerializeField]
+    GameObject healthUI;
+    [SerializeField]
+    SpriteRenderer playerSprite;
 
     float horizontalMovement;
     float verticalMovement;
     Vector2 movement;
+
+    GameManager gameManager;
 
     bool canMove=true;
     bool canDash = true;
@@ -26,9 +33,32 @@ public class PlayerCharacter : Character
 
     void Start()
     {
+        base.Start();
         isPlayer = true;
+        UpdateHealthUI(currentHP);
     }
 
+    private void UpdateHealthUI(int health)
+    {
+        int children = healthUI.transform.childCount;
+        for(int i=0;i<children;i++)
+        {
+            Transform child = healthUI.transform.GetChild(i);
+            if (i < health)
+            {
+                child.gameObject.SetActive(true);
+            }
+            else
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void SetGameManager(GameManager manager)
+    {
+        gameManager = manager;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -56,11 +86,11 @@ public class PlayerCharacter : Character
         if(Input.GetMouseButtonDown(1)&&canDash)
         {
             StartCoroutine(Dash());
-        }
+        }/*
         if (Input.GetMouseButtonDown(0))
         {
             weapon.Fire(shootpoint,attackRange,isPlayer);
-        }
+        }*/
     }
 
     private void MovePlayer()
@@ -89,5 +119,35 @@ public class PlayerCharacter : Character
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(shootpoint.position, attackRange);
+    }
+
+    public override void ApplyDamage(int damage)
+    {
+        base.ApplyDamage(damage);
+        UpdateHealthUI(currentHP);
+        StartCoroutine(ShowHitImpact());
+    }
+    IEnumerator ShowHitImpact()
+    {
+        Color spriteColor = playerSprite.color;
+        for (int i = 0; i < 2; i++)
+        {
+            playerSprite.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            playerSprite.color = spriteColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    public override void Die()
+    {
+        base.Die();
+        if(gameManager != null)
+        {
+            gameManager.RestartLevel();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //KnockBack
     }
 }

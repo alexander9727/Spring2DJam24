@@ -40,7 +40,7 @@ public class MeleeWeapon : Weapon
             foreach(Collider2D collider in colliders)
             {
                 Character character = collider.GetComponent<Character>();
-                character.Applyamage(damage);
+                character.ApplyDamage(damage);
             }
         }
     }
