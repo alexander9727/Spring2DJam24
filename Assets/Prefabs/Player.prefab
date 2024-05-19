@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 6447073946345205423}
   - component: {fileID: 5968096884476073593}
   - component: {fileID: 2158958920787057972}
-  - component: {fileID: 7149464984475070086}
+  - component: {fileID: 5542885067290108686}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -501,7 +501,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fccf5c712102d84fa1ea6ff53c62f9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -552,20 +552,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 3
-  moveSpeed: 15
+  moveSpeed: 50
   attackRange: 0.8
   isPlayer: 1
   weapon: {fileID: 0}
   shootpoint: {fileID: 797884764107617314}
   offset: -90
   rigidbody: {fileID: 5968096884476073593}
-  dashSpeed: 30
+  dashSpeed: 120
   dashCoolDown: 0.5
   dashTime: 0.2
   healthUI: {fileID: 3726663502679829208}
   playerSprite: {fileID: 6447073946345205423}
---- !u!61 &7149464984475070086
-BoxCollider2D:
+--- !u!58 &5542885067290108686
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -596,16 +596,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 5.4

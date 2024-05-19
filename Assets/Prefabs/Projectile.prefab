@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4217097724443915110}
   - component: {fileID: 6823973247992933243}
   - component: {fileID: 3947195947683814544}
-  - component: {fileID: -684022067583241865}
+  - component: {fileID: 7073945583962128406}
   m_Layer: 7
   m_Name: Projectile
   m_TagString: Untagged
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.42745098, b: 0.5411765, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 967ae7c8b3102574bacec72da1937235, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 3947195947683814544}
   moveSpeed: 30
-  lifeTime: 0.5
+  lifeTime: 1
 --- !u!50 &3947195947683814544
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +129,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-684022067583241865
+--- !u!58 &7073945583962128406
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,4 +163,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5.4
