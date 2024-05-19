@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 LatestBuild/
 LatestBuild.zip
+LastBuild.zip
